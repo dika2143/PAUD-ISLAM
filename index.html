@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAUD Muslim - Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-green-600 text-white text-center py-20">
+    <h1 class="text-4xl font-bold mb-4">Selamat Datang di PAUD Muslim</h1>
+    <p class="text-lg mb-6">Membentuk Generasi Islami Sejak Dini</p>
+    <a href="#" onclick="openRegisterModal()" class="bg-white text-green-600 font-bold py-2 px-6 rounded hover:bg-gray-200 transition">Daftar Sekarang</a>
+    <a href="#" onclick="openLoginModal()" class="ml-4 bg-white text-green-600 font-bold py-2 px-6 rounded hover:bg-gray-200 transition">Masuk Akun</a>
+  </section>
+
+    
+  <!-- About Section -->
+  <section class="max-w-5xl mx-auto py-16 px-6">
+    <h2 class="text-2xl font-bold text-center mb-8">Tentang Kami</h2>
+    <p class="text-center text-lg">
+      PAUD Muslim adalah tempat terbaik untuk memperkenalkan nilai-nilai Islam sejak dini kepada anak-anak dengan lingkungan belajar yang penuh kasih sayang dan aman.
+    </p>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="bg-white py-16 px-6">
+    <h2 class="text-2xl font-bold text-center mb-8">Kegiatan Terbaru</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-gray-100 p-6 rounded shadow">
+        <h3 class="font-bold mb-2 text-green-600">Belajar Mengaji</h3>
+        <p>Melatih anak mengenal huruf hijaiyah dengan metode menyenangkan.</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded shadow">
+        <h3 class="font-bold mb-2 text-green-600">Praktik Shalat</h3>
+        <p>Mengajarkan tata cara wudhu dan shalat sejak usia dini melalui praktik langsung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="kontak" class="bg-green-600 text-white py-16 px-6 text-center">
+    <h2 class="text-2xl font-bold mb-8">Hubungi Kami</h2>
+    <p class="text-lg mb-4">Alamat: Jl. Pendidikan No.123, Kota Muslim</p>
+    <p class="text-lg mb-4">WA: 0812-3456-7890</p>
+    <p class="text-lg">Email: paudmuslim@email.com</p>
+  </section>
+
+  <!-- Footer -->
+   <!-- Modal Step 1: Isi Nama, Email, No HP -->
+<div id="registerModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-8 rounded-lg w-96 relative">
+    <button onclick="closeRegisterModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">&times;</button>
+    <h2 class="text-2xl font-bold mb-4 text-center">Daftar Akun</h2>
+    <form id="registerForm" class="flex flex-col gap-4">
+      <input type="text" name="nama" placeholder="Nama Lengkap" class="border p-2 rounded" required>
+      <input type="email" name="email" placeholder="Email" class="border p-2 rounded" required>
+      <input type="tel" name="nohp" placeholder="No HP" class="border p-2 rounded" required>
+      <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Lanjut</button>
+    </form>
+  </div>
+</div>
+
+  <footer class="bg-green-700 text-white text-center py-4">
+    <p class="text-sm">&copy; 2025 PAUD Muslim. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal Login -->
+<div id="loginModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-8 rounded-lg w-96 relative">
+    <button onclick="closeLoginModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">&times;</button>
+    <h2 class="text-2xl font-bold mb-4 text-center">Login Akun</h2>
+    <form id="loginForm" class="flex flex-col gap-4">
+      <input type="email" name="loginEmail" placeholder="Email" class="border p-2 rounded" required>
+      <input type="password" name="loginPassword" placeholder="Password" class="border p-2 rounded" required>
+      <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Masuk</button>
+    </form>
+  </div>
+</div><!-- Modal OTP -->
+<div id="otpModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="bg-white p-8 rounded-lg w-96 relative">
+    <button onclick="closeOTPModal()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-900">&times;</button>
+    <h2 class="text-2xl font-bold mb-4 text-center">Verifikasi Kode</h2>
+    <p class="text-center text-sm mb-4 text-gray-600">Masukkan 6 digit kode verifikasi</p>
+    <form id="otpForm" class="flex flex-col gap-4">
+      <input type="text" name="otp" maxlength="6" placeholder="Contoh: 123456" class="border p-2 rounded text-center tracking-widest" required>
+      <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Verifikasi</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+function openRegisterModal() {
+  document.getElementById('registerModal').classList.remove('hidden');
+}
+
+function closeRegisterModal() {
+  document.getElementById('registerModal').classList.add('hidden');
+}
+function openLoginModal() {
+  document.getElementById('loginModal').classList.remove('hidden');
+}
+
+function closeLoginModal() {
+  document.getElementById('loginModal').classList.add('hidden');
+}
+function openOTPModal() {
+  generateOTP();
+  document.getElementById('otpModal').classList.remove('hidden');
+}
+
+function closeOTPModal() {
+  document.getElementById('otpModal').classList.add('hidden');
+}// Simpan kode OTP global
+let generatedOTP = null;
+
+function generateOTP() {
+  // Random 6 digit
+  generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+  console.log("Kode OTP kamu:", generatedOTP);
+
+  // (Nanti bisa kirim via email/WA, sekarang dummy aja muncul di console)
+}
+
+const otpForm = document.getElementById('otpForm');
+otpForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const inputOTP = otpForm.otp.value;
+
+  if (inputOTP === generatedOTP) {
+    closeOTPModal();
+    alert('Kode benar! Siap lanjut bikin password.');
+    // Nanti lanjut ke modal password
+  } else {
+    alert('Kode salah! Coba lagi.');
+  }
+
+  otpForm.reset();
+});
+
+// Handle Submit Register Form Step 1
+const registerForm = document.getElementById('registerForm');
+registerForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Ambil data dari form
+  const nama = registerForm.nama.value;
+  const email = registerForm.email.value;
+  const nohp = registerForm.nohp.value;
+
+  // Simpan data sementara di JavaScript
+  window.userData = {
+    nama: nama,
+    email: email,
+    nohp: nohp
+  };
+
+  console.log('Data user sementara:', window.userData);
+
+  // Tutup modal Step 1
+  closeRegisterModal();
+
+  // Nanti buka modal Step 2 (input kode OTP)
+  openOTPModal();
+});
+  
+  // Handle Form Login
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    closeLoginModal();
+    alert('Login Berhasil!');
+    loginForm.reset();
+  });
+  </script>
+
+</body>
+</html>
